@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>log4j2-demo-02</artifactId>
+    <artifactId>log4j2-demo-1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
@@ -54,6 +54,11 @@
             <groupId>cn.com.bsfit</groupId>
             <artifactId>bsfit-api</artifactId>
             <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.4.2</version>
         </dependency>
     </dependencies>
 
