@@ -1,7 +1,5 @@
 .idea
 *.iml
 **/target/**
-nebula-01/target/
-myapp.log
-logs/
-
+logs/**
+*.log
