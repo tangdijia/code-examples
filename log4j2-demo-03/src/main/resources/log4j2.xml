@@ -4,7 +4,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <RollingFile immediateFlush="true" append="false" name="RollingFile" fileName="logs/app.log"
+        <RollingFile immediateFlush="false" append="false" name="RollingFile" fileName="logs/app.log"
                      filePattern="logs/app-%d{yyyy-MM-dd-HH}-%i.log">
             <PatternLayout>
                 <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
@@ -16,9 +16,9 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="org.example.log4j2.Example" level="info" additivity="false">
+        <AsyncLogger name="org.example.log4j2.Example" level="info" additivity="false">
             <appender-ref ref="RollingFile"/>
-        </Logger>
+        </AsyncLogger>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
         </Root>

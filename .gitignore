@@ -1,10 +1,7 @@
 .idea
 *.iml
-example-01/target
-*.class
+**/target/**
 nebula-01/target/
 myapp.log
-logback-demo/target/
 logs/
-log4j2-demo-01/target/
-log4j2-demo-02/target/
+

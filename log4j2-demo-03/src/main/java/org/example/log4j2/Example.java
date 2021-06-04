@@ -20,12 +20,30 @@ public class Example {
 
     Logger logger = LogManager.getLogger("Test");
 
-    @RequestMapping("/")
+    @RequestMapping("/1")
     String home_1() {
         Event event = new Event("hello world");
         long s = System.currentTimeMillis();
         for (int i = 0; i < 1000000; i++) {
             log.info("{},{},{},{}", i, event.getClass().getName(), event.getTraceTime(), event.getTraceID());
+        }
+        logger.info("cost: {}", System.currentTimeMillis() - s);
+        return "Hello World!";
+    }
+
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    @RequestMapping("/2")
+    String home_2() {
+        Event event = new Event("hello world");
+        long s = System.currentTimeMillis();
+        for (int i = 0; i < 1000000; i++) {
+            executor.submit(new Runnable() {
+                @Override
+                public void run() {
+                    log.info("{},{},{}", event.getClass().getName(), event.getTraceTime(), event.getTraceID());
+                }
+            });
         }
         logger.info("cost: {}", System.currentTimeMillis() - s);
         return "Hello World!";
