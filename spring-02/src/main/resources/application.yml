@@ -1,0 +1,19 @@
+server:
+  port: 8000
+
+management:
+  metrics:
+    tags:
+      application: spring-prometheus
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+spring:
+  application:
+    name: spring-prometheus
