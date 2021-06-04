@@ -23,7 +23,7 @@
         <!--
             队列中可存储的日志事件的最大数量，默认为128。(源码中为128，Log4j2官网为1024，官网信息有误)
         -->
-        <Async name="Async" blocking="true" bufferSize="128">
+        <Async name="Async" blocking="true" bufferSize="128" includeLocation="false">
             <AppenderRef ref="RollingFile"/>
         </Async>
     </Appenders>
